@@ -1,9 +1,9 @@
 
 const DarkTheme = {
     Default: '#2F2F2F',
-    Background: '#222222',
-    Light: '#FAFAFA',
-    StatusBar: '#222222',
+    Background: '#000000',
+    Light: '#FFFFFF',
+    StatusBar: '#000000',
     Text: '#FFFFFF',
     TextDisabled: "#9E9E9E",
     TextLight: "#FAFAFA",

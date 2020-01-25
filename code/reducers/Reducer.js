@@ -7,6 +7,8 @@
 
 import { combineReducers } from 'redux';
 
-export default combineReducers({
+import FeaturedStateReducer from './featured';
 
+export default combineReducers({
+    FeaturedState: FeaturedStateReducer
 });

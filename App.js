@@ -1,19 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import { default as ConfigureStore } from './code/reducers/Store';
+import Themes from './code/constants/Themes';
+import Navigator from './code/navigation/Navigator';
+
+const Store = ConfigureStore();
+
+export default class App extends React.Component {
+
+  render() {
+    return (
+      <Provider store={Store}>
+        <View style={STYLES.container}>
+          <StatusBar barStyle='light-content' translucent backgroundColor={Themes.DarkTheme.StatusBar} />
+          <Navigator />
+        </View>
+      </Provider>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
+const STYLES = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+      flex: 1,
+      paddingTop: 25,
+      backgroundColor: Themes.DarkTheme.Background
+  }
 });
