@@ -1,5 +1,5 @@
 /**
- * Author: Vidush H. Namah (2019)
+ * Author: Vidush H. Namah (2020)
  * 
  * Reducer for Featured Playlists
  * State schema
@@ -10,48 +10,48 @@
 import * as ACTIONS from '../Actions';
 
 const INITIAL = {
-  Data: {},
-  Error: null,
-  Loading: false
+    Data: {},
+    Error: null,
+    Loading: false
 };
 
 export const Actions = {
-  AsyncRefreshList: () => ({
-    type: ACTIONS.FEATURED.TRIGGER_FETCH
-  })
+    AsyncRefreshList: () => ({
+        type: ACTIONS.FEATURED.TRIGGER_FETCH
+    })
 };
 
-export default MainStateReducer = (state = INITIAL, action = {}) => {
-  switch (action.type) {
-    case ACTIONS.FEATURED.SAGA_FETCH_START:
-      console.log("[SAGA] Fetch featured started.");
-      return {
-        ...state,
-        Error: null,
-        Loading: true
-      };
+export default FeaturedStateReducer = (state = INITIAL, action = {}) => {
+    switch (action.type) {
+        case ACTIONS.FEATURED.SAGA_FETCH_START:
+            console.log("[SAGA] Fetch featured started.");
+            return {
+                ...state,
+                Error: null,
+                Loading: true
+            };
 
-    case ACTIONS.FEATURED.SAGA_FETCH_SUCCESS:
-      console.log("[SAGA] Fetch featured successful.")
-      return {
-        ...state,
-        Error: null,
-        Loading: false,
-        Data: action.payload
-      }
-    
-    case ACTIONS.FEATURED.SAGA_FETCH_FAILURE:
-      console.log("[SAGA] Fetch featured failed");
-      return {
-        ...state,
-        Loading: false,
-        Error: {
-          Title: "Oops",
-          Message: "Failed to fetch the latest editor's picks."
-        }
-      }
+        case ACTIONS.FEATURED.SAGA_FETCH_SUCCESS:
+            console.log("[SAGA] Fetch featured successful.")
+            return {
+                ...state,
+                Error: null,
+                Loading: false,
+                Data: action.payload
+            };
 
-    default:
-      return state;
-  }
+        case ACTIONS.FEATURED.SAGA_FETCH_FAILURE:
+            console.log("[SAGA] Fetch featured failed");
+            return {
+                ...state,
+                Loading: false,
+                Error: {
+                    Title: "Oops",
+                    Message: "Failed to fetch the latest editor's picks."
+                }
+            };
+
+        default:
+            return state;
+    }
 }

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { default as ConfigureStore } from './code/reducers/Store';
 import Themes from './code/constants/Themes';
 import Navigator from './code/navigation/Navigator';
+import Root from './code/screens/Root';
 
 const Store = ConfigureStore();
 
@@ -15,7 +16,7 @@ export default class App extends React.Component {
       <Provider store={Store}>
         <View style={STYLES.container}>
           <StatusBar barStyle='light-content' translucent backgroundColor={Themes.DarkTheme.StatusBar} />
-          <Navigator />
+          <Root></Root>
         </View>
       </Provider>
     );
@@ -25,7 +26,7 @@ export default class App extends React.Component {
 const STYLES = StyleSheet.create({
   container: {
       flex: 1,
-      paddingTop: 25,
-      backgroundColor: Themes.DarkTheme.Background
+      backgroundColor: Themes.DarkTheme.Background,
+      color: Themes.DarkTheme.Light
   }
 });

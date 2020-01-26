@@ -8,7 +8,11 @@
 import { combineReducers } from 'redux';
 
 import FeaturedStateReducer from './featured';
+import PlaylistStateReducer from './playlist';
+import PlayerStateReducer from './player';
 
 export default combineReducers({
-    FeaturedState: FeaturedStateReducer
+    FeaturedState: FeaturedStateReducer,
+    PlaylistState: PlaylistStateReducer,
+    PlayerState: PlayerStateReducer
 });

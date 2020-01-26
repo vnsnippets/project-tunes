@@ -13,14 +13,14 @@ import {
 import Themes from '../../constants/Themes';
 
 export const ListItem = (props) => {
-  console.log(props.URI)
   return (
     <TouchableOpacity
+      onPress={props.Action}
       style={props.style}
       activeOpacity={0.75}>
       <Image
         style={{width: 150, height: 150}}
-        source={{uri: props.data.URI}} />
+        source={{uri: props.Image}} />
     </TouchableOpacity>
   )
 }

@@ -11,11 +11,15 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import FeaturedPage from '../screens/Featured';
+import PlaylistPage from '../screens/Playlist';
 
 const NavigationStack = createStackNavigator(
   {
     Featured: {
       screen: FeaturedPage
+    },
+    Playlist: {
+      screen: PlaylistPage
     }
   },
   {
