@@ -2,12 +2,12 @@
   "expo": {
     "name": "Spot",
     "slug": "rn-appstud-test",
-    "privacy": "public",
+    "description": "Sample project to emulate a basic spotify type of application",
+    "privacy": "unlisted",
     "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,7 +24,12 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.snippets.next.spotify",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.snippets.next.spotify",
+      "versionCode": 1
     }
   }
 }
